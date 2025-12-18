@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Mind Organization | ECD Day Care & Aftercare</title>
+    <meta
+      name="description"
+      content="Open Mind Organization is a registered ECD offering day care and aftercare for ages 3–6 in Ext 26. Enquire on WhatsApp."
+    />
+
+    <style>
+      :root {
+        --bg: #fff7f2;
+        --card: #ffffff;
+        --text: #1f2937;
+        --muted: #6b7280;
+        --primary: #ff6b6b;
+        --secondary: #4dabf7;
+        --accent: #51cf66;
+        --accent2: #ffd43b;
+        --ring: rgba(255, 107, 107, 0.25);
+        --shadow: 0 12px 30px rgba(31, 41, 55, 0.12);
+        --radius: 18px;
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+        color: var(--text);
+        background:
+          radial-gradient(900px 500px at 10% 0%, rgba(77,171,247,.18), transparent 60%),
+          radial-gradient(800px 450px at 90% 10%, rgba(255,212,59,.20), transparent 60%),
+          radial-gradient(700px 400px at 50% 100%, rgba(81,207,102,.18), transparent 60%),
+          var(--bg);
+      }
+
+      a { color: inherit; text-decoration: none; }
+
+      .container { width: min(1100px, 92%); margin: 0 auto; }
+
+      /* Top bar */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        backdrop-filter: blur(12px);
+        background: rgba(255, 247, 242, 0.75);
+        border-bottom: 1px solid rgba(31, 41, 55, 0.08);
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+        gap: 12px;
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 800;
+        letter-spacing: 0.2px;
+      }
+      .logo {
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        display: grid;
+        place-items: center;
+        box-shadow: 0 10px 20px rgba(255, 107, 107, 0.25);
+      }
+      .logo span { font-size: 22px; }
+      nav a {
+        font-size: 14px;
+        padding: 8px 10px;
+        border-radius: 12px;
+        color: rgba(31,41,55,.85);
+      }
+      nav a:hover { background: rgba(31, 41, 55, 0.05); }
+
+      .nav-right {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 0;
+        cursor: pointer;
+        padding: 12px 14px;
+        border-radius: 14px;
+        font-weight: 700;
+        font-size: 14px;
+        background: var(--card);
+        box-shadow: 0 10px 20px rgba(31,41,55,.10);
+      }
+      .btn:focus { outline: 3px solid var(--ring); outline-offset: 2px; }
+      .btn-primary {
+        background: linear-gradient(135deg, var(--primary), #ff8787);
+        color: white;
+      }
+
+      /* Hero */
+      .hero {
+        padding: 44px 0 22px;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+        align-items: center;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.7);
+        border: 1px solid rgba(31,41,55,.08);
+        font-weight: 700;
+        color: rgba(31,41,55,.85);
+      }
+
+      h1 {
+        font-size: clamp(30px, 4vw, 46px);
+        line-height: 1.05;
+        margin: 14px 0 10px;
+        letter-spacing: -0.5px;
+      }
+      .lead {
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 0 0 18px;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 10px;
+      }
+
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 16px;
+      }
+      .badge {
+        padding: 10px 12px;
+        border-radius: 14px;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(31,41,55,.08);
+        font-size: 13px;
+        font-weight: 700;
+        color: rgba(31,41,55,.85);
+      }
+
+      /* Cute illustration */
+      .card-illustration {
+        background: rgba(255, 255, 255, 0.78);
+        border: 1px solid rgba(31,41,55,.08);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 18px;
+        position: relative;
+        overflow: hidden;
+        min-height: 320px;
+      }
+      .cloud {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        background: #fff;
+        border: 1px solid rgba(31,41,55,.08);
+        border-radius: 999px;
+        padding: 8px 10px;
+        font-weight: 800;
+        font-size: 13px;
+        box-shadow: 0 10px 22px rgba(31,41,55,.08);
+      }
+      .scene {
+        display: grid;
+        place-items: center;
+        height: 100%;
+        padding-top: 18px;
+      }
+      .toybox {
+        width: min(380px, 100%);
+        border-radius: 22px;
+        background:
+          radial-gradient(180px 120px at 25% 30%, rgba(255,107,107,.25), transparent 55%),
+          radial-gradient(200px 130px at 80% 25%, rgba(77,171,247,.25), transparent 55%),
+          radial-gradient(200px 130px at 45% 80%, rgba(81,207,102,.25), transparent 55%),
+          #ffffff;
+        border: 1px solid rgba(31,41,55,.08);
+        padding: 18px;
+      }
+      .toyrow {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin-top: 12px;
+      }
+      .toy {
+        aspect-ratio: 1 / 1;
+        border-radius: 18px;
+        display: grid;
+        place-items: center;
+        font-size: 22px;
+        border: 1px solid rgba(31,41,55,.08);
+        background: rgba(255, 247, 242, 0.8);
+      }
+      .toy:nth-child(1) { background: rgba(255, 212, 59, 0.35); }
+      .toy:nth-child(2) { background: rgba(77, 171, 247, 0.30); }
+      .toy:nth-child(3) { background: rgba(81, 207, 102, 0.30); }
+      .toy:nth-child(4) { background: rgba(255, 107, 107, 0.30); }
+
+      /* Sections */
+      section { padding: 26px 0; }
+      .section-title {
+        font-size: 22px;
+        margin: 0 0 10px;
+        letter-spacing: -0.2px;
+      }
+      .section-sub {
+        margin: 0 0 18px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        gap: 14px;
+      }
+      .grid-3 { grid-template-columns: repeat(3, 1fr); }
+      .grid-2 { grid-template-columns: repeat(2, 1fr); }
+
+      .card {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid rgba(31,41,55,.08);
+        border-radius: var(--radius);
+        padding: 16px;
+        box-shadow: 0 12px 26px rgba(31,41,55,.08);
+      }
+      .card h3 { margin: 0 0 8px; font-size: 16px; }
+      .card p { margin: 0; color: var(--muted); line-height: 1.55; font-size: 14px; }
+
+      .pill {
+        display: inline-flex;
+        gap: 8px;
+        align-items: center;
+        font-size: 13px;
+        font-weight: 800;
+        padding: 9px 10px;
+        border-radius: 999px;
+        border: 1px solid rgba(31,41,55,.08);
+        background: rgba(255,255,255,.7);
+      }
+
+      /* Pricing table */
+      .price {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin: 10px 0 8px;
+      }
+      .price strong {
+        font-size: 28px;
+        letter-spacing: -0.4px;
+      }
+      .price span { color: var(--muted); font-size: 13px; font-weight: 700; }
+      ul { margin: 10px 0 0; padding-left: 18px; color: rgba(31,41,55,.85); }
+      li { margin: 8px 0; font-size: 14px; }
+      .note {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 12px;
+        line-height: 1.55;
+      }
+
+      input, select {
+        font: inherit;
+      }
+
+      /* Footer */
+      footer {
+        padding: 26px 0 100px;
+        color: rgba(31,41,55,.75);
+      }
+      .footer-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      /* WhatsApp floating button */
+      .wa-float {
+        position: fixed;
+        right: 16px;
+        bottom: 16px;
+        z-index: 80;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 999px;
+        background: #22c55e;
+        color: white;
+        font-weight: 900;
+        box-shadow: 0 18px 40px rgba(34, 197, 94, 0.35);
+        border: 0;
+      }
+      .wa-float:active { transform: translateY(1px); }
+      .wa-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: rgba(255,255,255,.18);
+        display: grid;
+        place-items: center;
+        font-size: 18px;
+      }
+
+      /* Responsive */
+      @media (max-width: 920px) {
+        .hero-grid { grid-template-columns: 1fr; }
+      }
+      @media (max-width: 860px) {
+        nav { display: none; }
+      }
+      @media (max-width: 860px) {
+        .grid-3 { grid-template-columns: 1fr; }
+        .grid-2 { grid-template-columns: 1fr; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="nav">
+          <div class="brand">
+            <div class="logo" aria-hidden="true"><span>🧸</span></div>
+            <div>
+              <div>Open Mind Organization</div>
+              <div style="font-size:12px;color:var(--muted);font-weight:700;">
+                Breaking barriers • Infinite curiosity • Endless growth
+              </div>
+            </div>
+          </div>
+
+          <nav aria-label="Primary navigation">
+            <a href="#about">About</a>
+            <a href="#programs">Programs</a>
+            <a href="#pricing">Fees</a>
+            <a href="#hours">Hours</a>
+            <a href="#contact">Contact</a>
+          </nav>
+
+          <div class="nav-right">
+            <a class="btn btn-primary" id="ctaTop" href="#contact">Enquire Now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <main class="container">
+      <section class="hero" id="top">
+        <div class="hero-grid">
+          <div>
+            <div class="tag">🌈 A happy start for little learners</div>
+            <h1>Breaking barriers through care, curiosity and early learning.</h1>
+            <p class="lead">
+              Open Mind Organization is a <strong>registered ECD</strong> that provides a safe, structured and nurturing environment
+              for children aged <strong>3–6 years</strong>. We support working parents with reliable day care and aftercare on
+              <strong>school days only</strong>.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn btn-primary" id="ctaHero" href="#pricing">See Fees</a>
+              <a class="btn" id="ctaWA" href="#" rel="noopener">WhatsApp the Owner</a>
+            </div>
+
+            <div class="badges">
+              <span class="badge">✅ Registered ECD</span>
+              <span class="badge">🧸 Ages 3–6 years</span>
+              <span class="badge">🥋 Extra mural: Karate</span>
+              <span class="badge">📍 Ext 26</span>
+            </div>
+          </div>
+
+          <div class="card-illustration" aria-label="Cute kids illustration">
+            <div class="cloud">🎨 Kid-friendly vibes</div>
+            <div class="scene">
+              <div class="toybox">
+                <div class="pill">🎓 Ages: 3 – 6 years</div>
+                <div class="toyrow" aria-hidden="true">
+                  <div class="toy">🧸</div>
+                  <div class="toy">🧩</div>
+                  <div class="toy">🎈</div>
+                  <div class="toy">🖍️</div>
+                </div>
+                <p class="note">
+                  Tip: later we can swap these icons with real photos (classroom, play area, staff) for more trust.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about">
+        <h2 class="section-title">About us</h2>
+        <p class="section-sub">
+          Open Mind Organization is an Early Childhood Development (ECD) centre focused on confidence, curiosity and growth.
+          We believe in breaking barriers by giving children a strong, joyful foundation through learning and play.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>🛡️ Safety first</h3>
+            <p>Supervised play, clear pick-up rules, and a clean daily routine.</p>
+          </div>
+          <div class="card">
+            <h3>📚 Early learning</h3>
+            <p>Activities that support language, counting, creativity and school readiness.</p>
+          </div>
+          <div class="card">
+            <h3>📄 Registered</h3>
+            <p>We are a <strong>registered business</strong> committed to responsible, structured child care.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Programs / Services -->
+      <section id="programs">
+        <h2 class="section-title">What we offer</h2>
+        <p class="section-sub">
+          Reliable care for children aged 3–6 years, with a consistent routine designed for school readiness.
+        </p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>🧠 ECD learning & play</h3>
+            <p>Learning through play, story time, songs, creative activities and social development.</p>
+          </div>
+          <div class="card">
+            <h3>🕒 Day care support</h3>
+            <p>Early drop-off and structured care during school days to support working parents.</p>
+          </div>
+          <div class="card">
+            <h3>✅ Aftercare</h3>
+            <p>Supervised care in the afternoon with quiet activities while parents finish work.</p>
+          </div>
+          <div class="card">
+            <h3>🥋 Extra Murals</h3>
+            <p><strong>Karate</strong> to build confidence, discipline and coordination.</p>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>Registrations:</strong> January to May • <strong>School days only</strong> • Ages <strong>3–6</strong>
+        </p>
+      </section>
+
+      <!-- Pricing -->
+      <section id="pricing">
+        <h2 class="section-title">Fees</h2>
+        <p class="section-sub">
+          Affordable, structured care for school-going children. Operating on school days only.
+        </p>
+
+        <div class="grid grid-3">
+          <div class="card">
+            <h3>Day care</h3>
+            <div class="price"><strong>R 500</strong><span>/ month</span></div>
+            <ul>
+              <li>06:00 – 15:00</li>
+              <li>Structured routine</li>
+              <li>Safe supervised environment</li>
+            </ul>
+          </div>
+
+          <div class="card" style="outline:3px solid rgba(255,107,107,.22);">
+            <h3>Aftercare</h3>
+            <div class="price"><strong>R 200</strong><span>/ month</span></div>
+            <ul>
+              <li>15:00 – 17:00</li>
+              <li>Quiet activities & supervision</li>
+              <li>Late pick-up support</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Extra Murals</h3>
+            <div class="price"><strong>Karate</strong></div>
+            <ul>
+              <li>Confidence & discipline</li>
+              <li>Fitness & coordination</li>
+              <li>Positive behaviour habits</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>Registrations are open from January to May.</strong> Spaces are limited — message us to secure a spot.
+        </p>
+      </section>
+
+      <!-- Hours / Location -->
+      <section id="hours">
+        <h2 class="section-title">Hours & location</h2>
+        <p class="section-sub">
+          We operate on <strong>school days only</strong> (Monday to Friday). Tap the button to open directions on your phone.
+        </p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>🗓️ Operating hours</h3>
+            <p><strong>Monday – Friday:</strong> 06:00 – 17:00</p>
+            <p><strong>School days only</strong></p>
+            <p class="note">Day care: 06:00–15:00 • Aftercare: 15:00–17:00</p>
+          </div>
+
+          <div class="card">
+            <h3>📍 Find us</h3>
+            <p><strong>6325 Mahubahuba Street, Ext 26</strong></p>
+
+            <a
+              href="https://maps.app.goo.gl/8y4k9bekYyAMvP4h6"
+              target="_blank"
+              class="btn"
+              style="margin-top:12px;"
+              rel="noopener"
+            >
+              📍 Open in Google Maps
+            </a>
+
+            <p class="note">Tap to get directions directly on your phone.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact">
+        <h2 class="section-title">Contact & registration</h2>
+        <p class="section-sub">
+          Tap WhatsApp to enquire. For faster help, include your child’s age, the service you need (day care or aftercare),
+          and your preferred start date.
+        </p>
+
+        <div class="grid grid-2">
+          <div class="card">
+            <h3>📲 WhatsApp</h3>
+            <p>Fastest response: message the owner directly.</p>
+            <div style="margin-top:12px;">
+              <a class="btn btn-primary" id="ctaContactWA" href="#" rel="noopener">Open WhatsApp</a>
+            </div>
+            <p class="note">We’ll auto-fill a message so parents don’t overthink it.</p>
+          </div>
+
+          <div class="card">
+            <h3>📝 Quick enquiry form</h3>
+
+            <form id="enrolForm" style="display:grid; gap:10px; margin-top:12px;">
+              <input required name="parentName" placeholder="Parent/Guardian name" style="padding:12px;border-radius:14px;border:1px solid rgba(31,41,55,.15);" />
+              <input required name="childName" placeholder="Child name" style="padding:12px;border-radius:14px;border:1px solid rgba(31,41,55,.15);" />
+              <input required name="childAge" placeholder="Child age (3–6 years)" style="padding:12px;border-radius:14px;border:1px solid rgba(31,41,55,.15);" />
+
+              <select name="program" style="padding:12px;border-radius:14px;border:1px solid rgba(31,41,55,.15);">
+                <option value="Day care (06:00–15:00)">Day care (06:00–15:00)</option>
+                <option value="Aftercare (15:00–17:00)" selected>Aftercare (15:00–17:00)</option>
+                <option value="Both (Day care + Aftercare)">Both (Day care + Aftercare)</option>
+              </select>
+
+              <input name="startDate" placeholder="Preferred start date (optional)" style="padding:12px;border-radius:14px;border:1px solid rgba(31,41,55,.15);" />
+
+              <button class="btn btn-primary" type="submit">Send on WhatsApp</button>
+              <p class="note">This opens WhatsApp with your message ready to send.</p>
+            </form>
+          </div>
+        </div>
+
+        <p class="note">
+          <strong>Registration period:</strong> January to May • <strong>Ages:</strong> 3–6 years • <strong>School days only</strong>
+        </p>
+      </section>
+
+      <footer>
+        <div class="footer-row">
+          <div style="font-weight:800;">Open Mind Organization (ECD)</div>
+          <div style="font-size:13px;color:var(--muted);">
+            © <span id="year"></span> • 6325 Mahubahuba Street, Ext 26
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <!-- Floating WhatsApp button -->
+    <a class="wa-float" id="waFloat" href="#" rel="noopener">
+      <span class="wa-icon">💬</span>
+      WhatsApp
+    </a>
+
+    <script>
+      // WhatsApp number in international format (no +, no spaces)
+      // 0608261453 -> 27608261453
+      const OWNER_WHATSAPP = "27608261453";
+
+      // Generic WhatsApp message for quick contact buttons
+      const quickMessage =
+        "Hi, I’d like to enquire about Open Mind Organization (ECD).%0A%0A" +
+        "Parent/Guardian name:%0A" +
+        "Child age (3–6):%0A" +
+        "Service (Day care / Aftercare):%0A" +
+        "Preferred start date:";
+
+      const waLink = `https://wa.me/${OWNER_WHATSAPP}?text=${quickMessage}`;
+
+      // Hook up all WhatsApp buttons
+      ["ctaWA", "ctaContactWA", "waFloat"].forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) el.setAttribute("href", waLink);
+      });
+
+      // Enrolment form -> WhatsApp (builds a cleaner message)
+      const form = document.getElementById("enrolForm");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const data = new FormData(form);
+
+          const parentName = data.get("parentName") || "";
+          const childName = data.get("childName") || "";
+          const childAge = data.get("childAge") || "";
+          const program = data.get("program") || "";
+          const startDate = data.get("startDate") || "";
+
+          const msg =
+            `Hi, I’d like to enquire about registration at Open Mind Organization (ECD).\\n\\n` +
+            `Parent/Guardian: ${parentName}\\n` +
+            `Child: ${childName}\\n` +
+            `Age: ${childAge}\\n` +
+            `Service: ${program}\\n` +
+            `Preferred start date: ${startDate}\\n\\n` +
+            `Address: 6325 Mahubahuba Street, Ext 26`;
+
+          const link = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+          window.open(link, "_blank");
+        });
+      }
+
+      // Year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
