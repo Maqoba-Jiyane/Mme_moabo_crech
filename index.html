@@ -638,33 +638,49 @@
         const el = document.getElementById(id);
         if (el) el.setAttribute("href", waLink);
       });
+      
+  // Enrolment form -> WhatsApp (clean newlines + encoding)
+  const form = document.getElementById("enrolForm");
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
-      // Enrolment form -> WhatsApp (builds a cleaner message)
-      const form = document.getElementById("enrolForm");
-      if (form) {
-        form.addEventListener("submit", (e) => {
-          e.preventDefault();
-          const data = new FormData(form);
+      const data = new FormData(form);
 
-          const parentName = data.get("parentName") || "";
-          const childName = data.get("childName") || "";
-          const childAge = data.get("childAge") || "";
-          const program = data.get("program") || "";
-          const startDate = data.get("startDate") || "";
+      const parentName = String(data.get("parentName") || "").trim();
+      const childName = String(data.get("childName") || "").trim();
+      const childAge = String(data.get("childAge") || "").trim();
+      const program = String(data.get("program") || "").trim();
+      const startDate = String(data.get("startDate") || "").trim();
 
-          const msg =
-            `Hi, I’d like to enquire about registration at Open Mind Organization (ECD).\\n\\n` +
-            `Parent/Guardian: ${parentName}\\n` +
-            `Child: ${childName}\\n` +
-            `Age: ${childAge}\\n` +
-            `Service: ${program}\\n` +
-            `Preferred start date: ${startDate}\\n\\n` +
-            `Address: 6325 Mahubahuba Street, Ext 26`;
-
-          const link = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(msg)}`;
-          window.open(link, "_blank");
-        });
+      // Optional: simple age guard (keeps your offer consistent)
+      // If user types "2 years" we warn them.
+      const ageNumberMatch = childAge.match(/\d+/);
+      const ageNumber = ageNumberMatch ? Number(ageNumberMatch[0]) : null;
+      if (ageNumber !== null && (ageNumber < 3 || ageNumber > 6)) {
+        alert("Note: This ECD is for ages 3–6 years. Please confirm the child's age.");
+        // We still allow sending, but you can block by returning here if you want:
+        // return;
       }
+
+      const lines = [
+        "Hi, I’d like to enquire about registration at Open Mind Organization (ECD).",
+        "",
+        `Parent/Guardian: ${parentName}`,
+        `Child: ${childName}`,
+        `Age: ${childAge}`,
+        `Service: ${program}`,
+        `Preferred start date: ${startDate || "Not sure yet"}`,
+        "",
+        "Address: 6325 Mahubahuba Street, Ext 26",
+        "Registration period: January to May",
+      ];
+
+      const msg = lines.join("\n");
+      const link = `https://wa.me/${OWNER_WHATSAPP}?text=${encodeURIComponent(msg)}`;
+      window.open(link, "_blank");
+    });
+  }
 
       // Year in footer
       document.getElementById("year").textContent = new Date().getFullYear();
